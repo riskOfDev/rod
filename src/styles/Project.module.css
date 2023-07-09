@@ -1,0 +1,23 @@
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.textContent {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.links {
+  padding-top: 80px;
+}
+
+.links a {
+  padding-top: 25px;
+  display: flex;
+}

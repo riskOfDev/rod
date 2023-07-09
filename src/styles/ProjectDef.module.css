@@ -1,0 +1,56 @@
+.titles h1 {
+  font-family: "Gemunu Libre", sans-serif;
+  font-weight: 800;
+}
+
+.titles h2 {
+  font-family: "Gemunu Libre", sans-serif;
+  font-weight: 800;
+}
+
+.linkImage {
+  margin-right: 8px;
+}
+
+
+@media only screen and (max-width: 1044px) {
+  .nameLinks {
+    display: none;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .linkItem {
+    flex-basis: 50%;
+    flex-grow: 1;
+  }
+
+  .titles h1 {
+    font-size: 25px;
+  }
+
+  .titles h2 {
+    font-size: 25px;
+  }
+
+}
+
+@media only screen and (max-width: 489px) {
+
+  .linkImage {
+    max-width: 150px;
+    margin-right: 0px;
+
+  }
+
+  .titles h1 {
+    font-size: 15px;
+  }
+
+  .titles h2 {
+    font-size: 15px;
+  }
+}

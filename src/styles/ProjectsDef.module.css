@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@700&display=swap');
+
+.title {
+  padding-bottom: 20px;
+}
+
+.titles h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+
+.titles h2 {
+
+  font-family: "Gemunu Libre", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+}

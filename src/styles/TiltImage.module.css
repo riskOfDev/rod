@@ -1,0 +1,23 @@
+.tiltContainer {
+    perspective: 1500px;
+}
+
+.tilt {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+    transform: rotateY(0deg);
+    border-radius: 15px;
+}
+
+.tiltContainer:hover .tilt {
+    transform: rotateY(20deg);
+}
+
+
+@media only screen and (max-width: 489px) {
+
+    .tiltContainer {
+        width: 115px;
+    }
+}
