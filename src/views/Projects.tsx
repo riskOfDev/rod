@@ -8,17 +8,7 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
-      type: "APP MOBILE DESIGN",
-      name: '"Sannabis"',
-      thumbnail: "sannabis.png",
-      generalLink: "https://www.google.com",
-      links: {
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
-      },
-    },
-    {
-      type: "WEB DESIGN",
+      type: "WEB",
       name: '"riskOfDev"',
       thumbnail: "riskofdev.png",
       generalLink: "",
@@ -30,8 +20,32 @@ const Projects = () => {
       },
     },
     {
-      type: "APP MOBILE DESIGN",
-      name: '"Ta-Da"',
+      type: "WEB APPLICATION",
+      name: '"IphoneShop"',
+      thumbnail: "ta-da.png",
+      generalLink: "",
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      type: "WEB APPLICATION - LMS",
+      name: '"Armonyface"',
+      thumbnail: "ta-da.png",
+      generalLink: "",
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      type: "PaseTicket - E-Commerce",
+      name: '"Armonyface"',
       thumbnail: "ta-da.png",
       generalLink: "",
       links: {
