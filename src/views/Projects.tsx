@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectReadmos from "../components/Projects/ProjectReadmos";
-import Project from "../components/Projects/Project";
 import styles from "../styles/ProjectsDef.module.css";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -8,76 +7,74 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
       type: "WEB",
       name: '"Portfolio FL"',
       thumbnail: "riskofdev.png",
-      generalLink: "",
-      links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
-      },
-    },
-    {
-      type: "WEB",
-      name: '"riskOfDev"',
-      thumbnail: "riskofdev.png",
-      generalLink: "",
-      links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
-      },
-    },
-    {
-      type: "WEB APPLICATION",
-      name: '"IphoneShop"',
-      thumbnail: "ta-da.png",
-      generalLink: "",
-      links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
-      },
-    },
-    {
-      type: "WEB APPLICATION - LMS",
-      name: '"Armonyface"',
-      thumbnail: "ta-da.png",
-      generalLink: "",
-      links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
-      },
-    },
-    {
-      type: "PaseTicket - E-Commerce",
-      name: '"Armonyface"',
-      thumbnail: "ta-da.png",
-      generalLink: "",
-      links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
-      },
-    },
-  ];
 
-  ("https://github.com/riskOfDev/portfolioFL_public");
-
-  const projectsReadmos = [
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
     {
       username: "riskOfDev",
       repoName: "portfolioFL_public",
-      name: "Name",
-      description: "Description",
-      link: "aaaa",
+      type: "WEB",
+      name: '"riskOfDev"',
+      thumbnail: "riskofdev.png",
+
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB APPLICATION",
+      name: '"IphoneShop"',
+      thumbnail: "ta-da.png",
+
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB APPLICATION - LMS",
+      name: '"Armonyface"',
+      thumbnail: "ta-da.png",
+
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB APPLICATION - E-COMMERCE",
+      name: '"PaseTicket"',
+      thumbnail: "ta-da.png",
+
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
     },
   ];
 
@@ -122,27 +119,18 @@ const Projects = () => {
           CHECK OUT MY WORK
         </motion.h2>
       </div>
-      {projectsReadmos.map((project, index) => (
+      {projects.map((project, index) => (
         <ProjectReadmos
           key={index}
           username={project.username}
           repoName={project.repoName}
-          name={project.name}
-          description={project.description}
-          link={project.link}
-        />
-      ))}
-      {/* {projects.map((project, index) => (
-        <Project
-          key={index}
           number={index + 1}
           type={project.type}
           name={project.name}
           thumbnail={project.thumbnail}
           links={project.links}
-          generalLink={project.generalLink}
         />
-      ))} */}
+      ))}
     </>
   );
 };
