@@ -12,8 +12,7 @@ const ProjectReadmos = ({ username, repoName, name, description, link }) => {
   useEffect(() => {
     const emojisObject = emojis;
 
-    const username2 = "axelromero99";
-    const userURL = `https://api.github.com/users/${username2}/repos`;
+    const userURL = `https://api.github.com/users/${username}/repos`;
 
     getRepos(userURL);
 

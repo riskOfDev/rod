@@ -9,6 +9,18 @@ const Projects = () => {
   const projects = [
     {
       type: "WEB",
+      name: '"Portfolio FL"',
+      thumbnail: "riskofdev.png",
+      generalLink: "",
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      type: "WEB",
       name: '"riskOfDev"',
       thumbnail: "riskofdev.png",
       generalLink: "",
@@ -56,6 +68,19 @@ const Projects = () => {
       },
     },
   ];
+
+  ("https://github.com/riskOfDev/portfolioFL_public");
+
+  const projectsReadmos = [
+    {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      name: "Name",
+      description: "Description",
+      link: "aaaa",
+    },
+  ];
+
   const { ref, inView } = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
   });
@@ -97,7 +122,17 @@ const Projects = () => {
           CHECK OUT MY WORK
         </motion.h2>
       </div>
-      {projects.map((project, index) => (
+      {projectsReadmos.map((project, index) => (
+        <ProjectReadmos
+          key={index}
+          username={project.username}
+          repoName={project.repoName}
+          name={project.name}
+          description={project.description}
+          link={project.link}
+        />
+      ))}
+      {/* {projects.map((project, index) => (
         <Project
           key={index}
           number={index + 1}
@@ -107,7 +142,7 @@ const Projects = () => {
           links={project.links}
           generalLink={project.generalLink}
         />
-      ))}
+      ))} */}
     </>
   );
 };
