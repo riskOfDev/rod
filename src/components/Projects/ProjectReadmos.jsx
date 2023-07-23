@@ -3,8 +3,6 @@ import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
 import emojis from "./readmos/emojis";
 import ProjectsStyle from "../../styles/Projects.module.css";
-
-// old
 import Image from "next/image";
 import { Box, Flex, Heading, Link, chakra } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
@@ -19,7 +17,6 @@ const MotionFlex = chakra(motion.flex);
 const ProjectReadmos = ({
   username,
   repoName,
-  // old
   type,
   name,
   thumbnail,
@@ -29,8 +26,6 @@ const ProjectReadmos = ({
   const [clean, setClean] = useState("");
   const [open, setOpen] = useState(false);
 
-  // old
-  // const [open, setOpen] = useState(false);
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -41,8 +36,6 @@ const ProjectReadmos = ({
       controls.start("visible");
     }
   }, [controls, inView]);
-
-  // end old
 
   useEffect(() => {
     const emojisObject = emojis;
@@ -258,9 +251,6 @@ const ProjectReadmos = ({
       {/* READMOS */}
 
       <div className={ProjectsStyle.markdownbody}>
-        {/* <button onClick={handleClick}>Readme</button> */}
-        {/* Result */}
-
         {open && (
           <div
             dangerouslySetInnerHTML={{
