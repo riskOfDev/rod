@@ -8,16 +8,15 @@ const Projects = () => {
   const projects = [
     {
       username: "riskOfDev",
-      repoName: "portfolioFL_public",
+      repoName: "portfolioFL",
       type: "WEB",
       name: '"Portfolio FL"',
-      thumbnail: "riskofdev.png",
-
+      thumbnail: "portfoliofl.png",
       links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
+        github: "https://github.com/riskOfDev/portfolioFL",
+        demo: "https://portfolio-fl.vercel.app/",
+        figma:
+          "https://www.figma.com/file/2UfMk8uEUHJ11zWJAF3Mtx/PORTFOLIO?node-id=2%3A27&t=Vy6OlGx5xmLxUhoI-1",
       },
     },
     {
@@ -26,12 +25,11 @@ const Projects = () => {
       type: "WEB",
       name: '"riskOfDev"',
       thumbnail: "riskofdev.png",
-
       links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
+        github: "https://github.com/riskOfDev/rod",
+        demo: "https://riskofdev.com",
+        figma:
+          "https://www.figma.com/file/2UfMk8uEUHJ11zWJAF3Mtx/PORTFOLIO?node-id=2%3A27&t=Vy6OlGx5xmLxUhoI-1",
       },
     },
     {
@@ -39,27 +37,24 @@ const Projects = () => {
       repoName: "portfolioFL_public",
       type: "WEB APPLICATION",
       name: '"IphoneShop"',
-      thumbnail: "ta-da.png",
-
+      thumbnail: "iphoneshop.png",
       links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
+        demo: "https://www.iphoneshop.com",
+        figma:
+          "https://www.figma.com/file/v9PO9HeB6eD8jJR4stFTlZ/IS-REDESIGN-2023?type=design&node-id=0-1&mode=design",
       },
     },
     {
-      username: "riskOfDev",
-      repoName: "portfolioFL_public",
-      type: "WEB APPLICATION - LMS",
-      name: '"Armonyface"',
-      thumbnail: "ta-da.png",
-
+      username: "LuchoQQ",
+      repoName: "armoniface",
+      type: "Web Aplication",
+      name: '"armoniface"',
+      thumbnail: "armoniface.png",
       links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
+        github: "https://github.com/LuchoQQ/armoniface",
+        demo: "https://www.armoniface.com",
+        figma:
+          "https://www.figma.com/file/Ij6k9Hlrcu2XXDzo87dTJX/Untitled?type=design&node-id=0%3A1&mode=design&t=XFyDwklVf33KxeEB-1",
       },
     },
     {
@@ -68,12 +63,8 @@ const Projects = () => {
       type: "WEB APPLICATION - E-COMMERCE",
       name: '"PaseTicket"',
       thumbnail: "ta-da.png",
-
       links: {
-        github: "https://www.google.com",
-        demo: "https://www.google.com",
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
+        demo: "https://paseticket.com/",
       },
     },
   ];
