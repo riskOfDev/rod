@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectReadmos from "../components/Projects/ProjectReadmos";
-import Project from "../components/Projects/Project";
 import styles from "../styles/ProjectsDef.module.css";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -8,20 +7,12 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
-      type: "APP MOBILE DESIGN",
-      name: '"Sannabis"',
-      thumbnail: "sannabis.png",
-      generalLink: "https://www.google.com",
-      links: {
-        behance: "https://www.google.com",
-        figma: "https://www.google.com",
-      },
-    },
-    {
-      type: "WEB DESIGN",
-      name: '"riskOfDev"',
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB",
+      name: '"Portfolio FL"',
       thumbnail: "riskofdev.png",
-      generalLink: "",
+
       links: {
         github: "https://www.google.com",
         demo: "https://www.google.com",
@@ -30,10 +21,54 @@ const Projects = () => {
       },
     },
     {
-      type: "APP MOBILE DESIGN",
-      name: '"Ta-Da"',
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB",
+      name: '"riskOfDev"',
+      thumbnail: "riskofdev.png",
+
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB APPLICATION",
+      name: '"IphoneShop"',
       thumbnail: "ta-da.png",
-      generalLink: "",
+
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB APPLICATION - LMS",
+      name: '"Armonyface"',
+      thumbnail: "ta-da.png",
+
+      links: {
+        github: "https://www.google.com",
+        demo: "https://www.google.com",
+        behance: "https://www.google.com",
+        figma: "https://www.google.com",
+      },
+    },
+    {
+      username: "riskOfDev",
+      repoName: "portfolioFL_public",
+      type: "WEB APPLICATION - E-COMMERCE",
+      name: '"PaseTicket"',
+      thumbnail: "ta-da.png",
+
       links: {
         github: "https://www.google.com",
         demo: "https://www.google.com",
@@ -42,6 +77,7 @@ const Projects = () => {
       },
     },
   ];
+
   const { ref, inView } = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
   });
@@ -84,14 +120,15 @@ const Projects = () => {
         </motion.h2>
       </div>
       {projects.map((project, index) => (
-        <Project
+        <ProjectReadmos
           key={index}
+          username={project.username}
+          repoName={project.repoName}
           number={index + 1}
           type={project.type}
           name={project.name}
           thumbnail={project.thumbnail}
           links={project.links}
-          generalLink={project.generalLink}
         />
       ))}
     </>

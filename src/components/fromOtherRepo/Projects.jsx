@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
-      type: "APP MOBILE DESIGN",
-      name: '"Sannabis"',
+      type: "Web Application",
+      name: '"IphoneShop"',
       thumbnail: "sannabis.png",
       generalLink: "https://www.google.com",
       links: {
@@ -18,8 +18,8 @@ const Projects = () => {
       },
     },
     {
-      type: "WEB DESIGN",
-      name: '"riskOfDev"',
+      type: "E-Commerce",
+      name: '"Greka Shop"',
       thumbnail: "riskofdev.png",
       generalLink: "",
       links: {
@@ -30,10 +30,10 @@ const Projects = () => {
       },
     },
     {
-      type: "APP MOBILE DESIGN",
-      name: '"Ta-Da"',
+      type: "E-Commerce",
+      name: '"Planeta Burgers"',
       thumbnail: "ta-da.png",
-      generalLink: "",
+      generalLink: "https://www.google.com",
       links: {
         github: "https://www.google.com",
         demo: "https://www.google.com",
