@@ -5,9 +5,9 @@ import { Box } from "@chakra-ui/react";
 const auxDescription = () => {
   return (
     <>
-      <Box bg="blue" w="100" h="100vh"></Box>
+      {/* <Box bg="blue" w="100" h="100vh"></Box> */}
       <Description />
-      <Box bg="blue" w="100" h="100vh"></Box>
+      {/* <Box bg="blue" w="100" h="100vh"></Box> */}
     </>
   );
 };
