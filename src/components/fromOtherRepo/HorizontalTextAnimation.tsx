@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Heading } from "@chakra-ui/react";
 
 const titleStyle = {
   fontFamily: "var(--font-primary)",
@@ -6,7 +7,7 @@ const titleStyle = {
   fontSize: "36px",
   zIndex: 1,
   margin: 0,
-  whiteSpace: "nowrap",
+  // whiteSpace: "nowrap",
   marginTop: "auto",
   transition: "transform 0.3s ease-in-out",
 };
@@ -15,7 +16,7 @@ const HorizontalTextAnimation = ({
   text,
   defaultDirection = "right",
   defaultOffset = 0,
-}) => {
+}: {text: string, defaultDirection: string, defaultOffset: number}) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [translateX, setTranslateX] = useState(defaultOffset);
 
@@ -41,9 +42,9 @@ const HorizontalTextAnimation = ({
   return (
     <div>
       <div style={{ position: "sticky", top: 0 }}>
-        <h1 style={{ ...titleStyle, transform: `translateX(${translateX}px)` }}>
+        <Heading {...titleStyle} transform={`translateX(${translateX}px)`}>
           {text}
-        </h1>
+        </Heading>
       </div>
     </div>
   );

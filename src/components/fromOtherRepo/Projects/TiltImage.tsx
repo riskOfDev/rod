@@ -2,10 +2,10 @@ import styles from "../../styles/TiltImage.module.css";
 import React, { useState } from "react";
 import Image from "next/image";
 
-const TiltImage = ({ image }) => {
+const TiltImage = ({ image }: {image: string}) => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: any) => {
     const rect = e.target.getBoundingClientRect();
     const x = e.clientX - rect.left; //x position within the element.
     const y = e.clientY - rect.top; //y position within the element.

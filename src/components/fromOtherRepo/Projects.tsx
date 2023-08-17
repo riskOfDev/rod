@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectReadmos from "../components/Projects/ProjectReadmos";
-import Project from "../components/Projects/Project";
+// import ProjectReadmos from "../components/Projects/ProjectReadmos";
+import Project from "../Projects/Project"
 import styles from "../styles/ProjectsDef.module.css";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";

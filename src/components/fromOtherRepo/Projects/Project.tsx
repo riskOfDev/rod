@@ -10,9 +10,9 @@ import styles from "../../styles/ProjectDef.module.css";
 
 // Create a motion component using Chakra UI's Box component
 const MotionBox = chakra(motion.div);
-const MotionFlex = chakra(motion.flex);
+const MotionFlex = chakra(motion.div);
 
-const Project = ({ type, name, thumbnail, links, number, generalLink }) => {
+const Project = ({ type, name, thumbnail, links, number, generalLink }: any) => {
   const [open, setOpen] = useState(false);
   const controls = useAnimation();
   const { ref, inView } = useInView({
