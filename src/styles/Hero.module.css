@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+  width: 100vw;
+  /* full viewport width */
+  height: 100vh;
+  /* full viewport height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  /* Center text horizontally */
+  align-items: center;
+  /* Center text vertically */
+  font-size: 34px;
+  color: white;
+}
+
+.video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  /* Ensure video is behind content */
+}
+
+.not {
+  color: #DE0195;
+}
