@@ -85,6 +85,7 @@ const Projects = () => {
       </div>
       {projects.map((project, index) => (
         <Project
+          // <ProjectReadmos
           key={index}
           number={index + 1}
           type={project.type}

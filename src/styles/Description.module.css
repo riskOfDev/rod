@@ -1,0 +1,25 @@
+/* Description.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 3.5rem;
+  /* Adjust as needed to make the text bigger */
+  color: white;
+}
+
+.text {
+  text-align: center;
+  margin: 0.5em 0;
+  /* Gives spacing between each line, adjust as needed */
+}
+
+.activeText {
+  font-size: 2rem;
+  /* Adjust as needed */
+  color: #ff4500;
+  /* Change to the desired color */
+}

@@ -7,12 +7,20 @@ import DOMPurify from "isomorphic-dompurify";
 import emojis from "./readmos/emojis";
 import TiltImage from "./TiltImage";
 import styles from "../../styles/ProjectDef.module.css";
+import ProjectReadmos from "../../components/Projects/ProjectReadmos";
 
 // Create a motion component using Chakra UI's Box component
 const MotionBox = chakra(motion.div);
 const MotionFlex = chakra(motion.div);
 
-const Project = ({ type, name, thumbnail, links, number, generalLink }: any) => {
+const Project = ({
+  type,
+  name,
+  thumbnail,
+  links,
+  number,
+  generalLink,
+}: any) => {
   const [open, setOpen] = useState(false);
   const controls = useAnimation();
   const { ref, inView } = useInView({
@@ -46,9 +54,7 @@ const Project = ({ type, name, thumbnail, links, number, generalLink }: any) => 
           visible: { opacity: 1, transition: { delay: 0.7 } },
         }}
       >
-        <a href={generalLink}>
-          <TiltImage image={`/thumbnails/${thumbnail}`}></TiltImage>
-        </a>
+        <ProjectReadmos link={generalLink} thumbnail={thumbnail} />
       </MotionBox>
 
       <Box ml={number % 2 ? "30px" : "0px"} className="textContent">
