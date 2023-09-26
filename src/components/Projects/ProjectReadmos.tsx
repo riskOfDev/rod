@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
 import emojis from "./readmos/emojis";
 import TiltImage from "./TiltImage";
-
+import Modal from "./Modal";
 import ProjectsStyle from "../../styles/Projects.module.css";
+// import ProjectReadmos from "../../styles/ProjectReadmos.module.css";
+
+interface ModalHandles {
+  openModal: () => void;
+  closeModal: () => void;
+}
 
 const ProjectReadmos = ({
   username,
@@ -16,6 +22,7 @@ const ProjectReadmos = ({
 }: any) => {
   const [clean, setClean] = useState("");
   const [open, setOpen] = useState(false);
+  const modalRef = useRef<ModalHandles>(null);
 
   useEffect(() => {
     const emojisObject = emojis;
@@ -29,6 +36,8 @@ const ProjectReadmos = ({
       const response = await fetch(userURL);
       const result = await response.json();
 
+      console.log(result);
+
       let rawURL = result[0].html_url + "/master/README.md";
       rawURL = [rawURL.slice(0, 8), "raw.", rawURL.slice(8)].join("");
       rawURL = rawURL.replace("github", "githubusercontent");
@@ -37,6 +46,7 @@ const ProjectReadmos = ({
     }
 
     async function fetchReadme(url) {
+      1;
       const response = await fetch(url);
       const text = await response.text();
 
@@ -49,7 +59,7 @@ const ProjectReadmos = ({
       setClean(clean);
     }
 
-    function replaceIcons(dirty) {
+    function replaceIcons(dirty: string) {
       const regexp = RegExp(":[a-zA-Z1-9_+-]*:", "g");
       let dirtyCopy = dirty;
       let word;
@@ -79,7 +89,7 @@ const ProjectReadmos = ({
   }, []);
 
   const handleClick = () => {
-    console.log("clicked");
+    modalRef.current?.openModal(); // Using optional chaining to ensure that current is not null or undefined
     setOpen(!open);
   };
 
@@ -91,12 +101,16 @@ const ProjectReadmos = ({
       {/* Result */}
 
       {open && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: clean,
-          }}
-          className="markdownbody"
-        />
+        <>
+          <Modal title="test" onClose={() => setOpen(false)}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: clean,
+              }}
+              className="markdownbody"
+            />
+          </Modal>
+        </>
       )}
     </div>
   );
