@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectReadmos from "../components/Projects/ProjectReadmos";
+import ProjectReadmos from "../components/Projects/readmos/ProjectReadmos";
 import Project from "../components/Projects/Project";
 import styles from "../styles/ProjectsDef.module.css";
 import { useInView } from "react-intersection-observer";

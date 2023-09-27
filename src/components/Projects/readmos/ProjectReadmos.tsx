@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
-import emojis from "./readmos/emojis";
-import TiltImage from "./TiltImage";
-import Modal from "./Modal";
-import ProjectsStyle from "../../styles/Projects.module.css";
-// import ProjectReadmos from "../../styles/ProjectReadmos.module.css";
+import emojis from "./emojis";
+import TiltImage from "@/components/TiltImage";
+import Modal from "@/components/Modal";
+import ProjectsStyle from "@/styles/Projects.module.css";
+import ProjectReadmosStyles from "@/styles/ProjectReadmos.module.css";
 
 interface ModalHandles {
   openModal: () => void;
@@ -35,8 +35,6 @@ const ProjectReadmos = ({
     async function getRepos(userURL) {
       const response = await fetch(userURL);
       const result = await response.json();
-
-      console.log(result);
 
       let rawURL = result[0].html_url + "/master/README.md";
       rawURL = [rawURL.slice(0, 8), "raw.", rawURL.slice(8)].join("");
@@ -72,15 +70,11 @@ const ProjectReadmos = ({
 
         // Delete the : of the word
         word = ocurrency[0].slice(1, -1);
-        console.log("word", word);
-        console.log(emojis);
         // Compare if the emoji syntax is on the emojis
         if (Object.keys(emojis).includes(word)) {
           let emojiHTML = `<img style="width: 1em; display: inline" src="${emojis[word]}"></img>`;
 
           dirtyCopy = dirtyCopy.replace(/\:[a-zA-Z_]*\:/, emojiHTML);
-
-          console.log("dirtyCopy,dirtyCopy", dirtyCopy);
         }
       }
 
@@ -102,12 +96,12 @@ const ProjectReadmos = ({
 
       {open && (
         <>
-          <Modal title="test" onClose={() => setOpen(false)}>
+          <Modal onClose={() => setOpen(false)}>
             <div
               dangerouslySetInnerHTML={{
                 __html: clean,
               }}
-              className="markdownbody"
+              className={ProjectReadmosStyles.markdownbody}
             />
           </Modal>
         </>

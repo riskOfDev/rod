@@ -3,17 +3,14 @@ import Image from "next/image";
 import { Box, Flex, Heading, Link, chakra } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import DOMPurify from "isomorphic-dompurify";
-import emojis from "./readmos/emojis";
-import TiltImage from "../TiltImage";
-import styles from "../../styles/ProjectDef.module.css";
-import ProjectReadmos from "./readmos/ProjectReadmos";
+import styles from "../../styles/IntegrantDef.module.css";
+import IntegrantReadmos from "./readmos/IntegrantReadmos";
 
 // Create a motion component using Chakra UI's Box component
 const MotionBox = chakra(motion.div);
 const MotionFlex = chakra(motion.div);
 
-const Project = ({
+const Integrant = ({
   type,
   name,
   thumbnail,
@@ -54,7 +51,7 @@ const Project = ({
           visible: { opacity: 1, transition: { delay: 0.7 } },
         }}
       >
-        <ProjectReadmos link={generalLink} thumbnail={thumbnail} />
+        <IntegrantReadmos link={generalLink} thumbnail={thumbnail} />
       </MotionBox>
 
       <Box ml={number % 2 ? "30px" : "0px"} className="textContent">
@@ -115,7 +112,7 @@ const Project = ({
                     <span className={styles.nameLinks}>Github</span>
                   </Link>
                 )}
-                {link === "demo" && (
+                {link === "portfolio" && (
                   <Link
                     href={links[link]}
                     target="_blank"
@@ -135,46 +132,6 @@ const Project = ({
                     <span className={styles.nameLinks}>Live</span>
                   </Link>
                 )}
-                {link === "behance" && (
-                  <Link
-                    href={links[link]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    display="flex"
-                    alignItems="center"
-                    mr={4}
-                    _hover={{ color: "blue.500" }}
-                  >
-                    <Image
-                      src="/icons/behance.svg"
-                      alt="behance"
-                      width={30}
-                      height={30}
-                      className={styles.linkImage}
-                    />
-                    <span className={styles.nameLinks}>Behance</span>
-                  </Link>
-                )}
-                {link === "figma" && (
-                  <Link
-                    href={links[link]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    display="flex"
-                    alignItems="center"
-                    mr={4}
-                    _hover={{ color: "blue.500" }}
-                  >
-                    <Image
-                      src="/icons/figma.svg"
-                      alt="figma"
-                      width={30}
-                      height={30}
-                      className={styles.linkImage}
-                    />
-                    <span className={styles.nameLinks}>Figma</span>
-                  </Link>
-                )}
               </MotionBox>
             );
           })}
@@ -184,4 +141,4 @@ const Project = ({
   );
 };
 
-export default Project;
+export default Integrant;

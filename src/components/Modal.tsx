@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
-const Modal = ({ onClose, children, title }) => {
+const Modal = ({ onClose, children }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,6 @@ const Modal = ({ onClose, children, title }) => {
               x
             </a>
           </div>
-          {title && <h1>{title}</h1>}
           <div className="modal-body">{children}</div>
         </div>
       </div>

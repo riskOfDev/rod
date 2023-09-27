@@ -1,8 +1,8 @@
-import styles from "../../styles/TiltImage.module.css";
+import styles from "@/styles/TiltImage.module.css";
 import React, { useState } from "react";
 import Image from "next/image";
 
-const TiltImage = ({ image }: {image: string}) => {
+const TiltImage = ({ image }: { image: string }) => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: any) => {
