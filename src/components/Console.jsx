@@ -106,7 +106,11 @@ const Console = () => {
     }
   }, [state.text]);
 
-  return <pre className={styles.console}>{state.text}</pre>;
+  return (
+    <pre className={styles.console} ref={consoleRef}>
+      {state.text}
+    </pre>
+  );
 };
 
 export default Console;
