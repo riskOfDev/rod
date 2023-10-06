@@ -13,6 +13,26 @@ const Integrants = () => {
         portfolio: "https://arrecode.vercel.app/#/",
       },
     },
+    {
+      name: "Axel René Romero Esquivel",
+      position: "Senior Fullstack Developer",
+      thumbnail: "axel.jpg",
+      generalLink: "https://www.github.com/axelromero99",
+      links: {
+        github: "https://www.github.com/axelromero99",
+        portfolio: "https://arrecode.vercel.app/#/",
+      },
+    },
+    {
+      name: "Axel René Romero Esquivel",
+      position: "Senior Fullstack Developer",
+      thumbnail: "axel.jpg",
+      generalLink: "https://www.github.com/axelromero99",
+      links: {
+        github: "https://www.github.com/axelromero99",
+        portfolio: "https://arrecode.vercel.app/#/",
+      },
+    },
   ];
 
   return (

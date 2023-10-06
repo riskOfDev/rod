@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
-const Modal = ({ onClose, children }) => {
+const Modal = ({ onClose, children }: any) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    document.body.style.overflow = "hidden"; // Add this line to prevent background scrolling
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = ""; // Reset the overflow property when Modal component is unmounted
+      document.body.style.overflow = "";
     };
   }, []);
 
@@ -17,7 +17,7 @@ const Modal = ({ onClose, children }) => {
     return null;
   }
 
-  const handleCloseClick = (e) => {
+  const handleCloseClick = (e: any) => {
     e.preventDefault();
     onClose();
   };
@@ -37,10 +37,9 @@ const Modal = ({ onClose, children }) => {
     </div>
   );
 
-  return ReactDOM.createPortal(
-    modalContent,
-    document.getElementById("modal-root")
-  );
+  const modalRoot = document.getElementById("modal-root");
+
+  return modalRoot ? ReactDOM.createPortal(modalContent, modalRoot) : null;
 };
 
 export default Modal;

@@ -1,0 +1,10 @@
+/* console.module.css */
+.console {
+    background-color: black;
+    color: lime;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    border: solid 1px lime;
+    height: 200px;
+    overflow: auto;
+}

@@ -32,7 +32,7 @@ const ProjectReadmos = ({
 
     getRepos(userURL);
 
-    async function getRepos(userURL) {
+    async function getRepos(userURL: string) {
       const response = await fetch(userURL);
       const result = await response.json();
 
@@ -43,7 +43,7 @@ const ProjectReadmos = ({
       fetchReadme(rawURL);
     }
 
-    async function fetchReadme(url) {
+    async function fetchReadme(url: string) {
       1;
       const response = await fetch(url);
       const text = await response.text();

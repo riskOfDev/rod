@@ -13,11 +13,17 @@ const Technologies = () => {
   ];
 
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <div>What we do</div>
       <div>
         {techLogos.map((item, index) => {
-          return <img key={index} src={item.logo} alt={item.name}></img>;
+          return (
+            <img
+              key={index}
+              src={`./techs/${item.logo}.png`}
+              alt={item.name}
+            ></img>
+          );
         })}
       </div>
       <div>
