@@ -1,10 +1,17 @@
-/* console.module.css */
+/* Console.module.css */
 .console {
     background-color: black;
     color: lime;
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
     border: solid 1px lime;
-    height: 200px;
-    overflow: auto;
+    height: 400px;
+    overflow-y: auto;
+    /* vertical scrollbar */
+    overflow-x: hidden;
+    /* prevent horizontal scrollbar */
+    white-space: pre-wrap;
+    /* break lines */
+    word-wrap: break-word;
+    /* break words */
 }

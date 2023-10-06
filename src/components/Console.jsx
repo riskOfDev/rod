@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 import styles from "@/styles/Console.module.css";
 
-const Console = () => {
-  const [text, setText] = useState("");
-  const buildOutput = `
+const buildOutput = `
     $ npm run build
 
     > rod@0.1.0 build
@@ -70,21 +68,45 @@ const Console = () => {
     runtime (uses getInitialProps or getServerSideProps)
     ○  (Static)  automatically rendered 
     as static HTML (uses no initial props)
-  `;
+`;
+
+const lines = buildOutput.split("\n");
+
+const initialState = { text: "", line: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "addLine":
+      return {
+        ...state,
+        text: state.text + lines[state.line] + "\n",
+        line: state.line + 1,
+      };
+    default:
+      throw new Error();
+  }
+}
+
+const Console = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const consoleRef = useRef(null);
 
   useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setText((prev) => prev + buildOutput[index]);
-      index += 1;
-      if (index === buildOutput.length) {
-        clearInterval(interval);
-      }
-    }, 10);
-    return () => clearInterval(interval);
-  }, [buildOutput]);
+    if (state.line < lines.length) {
+      const timeoutId = setTimeout(() => {
+        dispatch({ type: "addLine" });
+      }, 100);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [state]);
 
-  return <pre className={styles.console}>{text}</pre>;
+  useEffect(() => {
+    if (consoleRef.current) {
+      consoleRef.current.scrollTop = consoleRef.current.scrollHeight;
+    }
+  }, [state.text]);
+
+  return <pre className={styles.console}>{state.text}</pre>;
 };
 
 export default Console;
